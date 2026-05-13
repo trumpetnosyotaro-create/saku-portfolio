@@ -275,6 +275,40 @@ img {
   color: var(--text-muted);
 }
 
+/* Why Saku? */
+.grid-why {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .grid-why { grid-template-columns: repeat(3, 1fr); }
+}
+
+.why-card {
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.why-number {
+  font-family: var(--font-en);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.why-title {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.why-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
 /* Featured Video */
 .featured-video {
   width: 100%;
