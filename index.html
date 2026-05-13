@@ -240,6 +240,9 @@
                             <li>実現したい雰囲気やイメージ</li>
                         </ul>
                         <p class="service-detail-text" style="margin-top: 16px; margin-bottom: 0;">内容を確認したうえで、対応可能な形をご提案します。</p>
+                        <p class="service-detail-text" style="margin-top: 16px; margin-bottom: 0; font-size: 0.85rem; color: var(--accent-gold);">
+                            ※演奏・録音・制作の料金は、内容・拘束時間・編成・納期により変動します。まずはご予算の目安を添えてご相談ください。
+                        </p>
                     </div>
                 </div>
             </div>
@@ -263,7 +266,8 @@
                 </div>
                 
                 <p class="service-detail-text text-center" style="margin-top: 32px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; margin-bottom: 0;">
-                    初心者から経験者まで、現在の課題や目標に合わせて内容を組み立てます。
+                    初心者、吹奏楽経験者、ジャズに挑戦したい方、アドリブを学びたい方などに対応。<br>
+                    現在の課題や目標に合わせて内容を組み立てます。
                 </p>
             </div>
 
@@ -325,10 +329,20 @@
             <input type="text" name="name" placeholder="お名前" required>
             <!-- Formspreeは name="email" または name="_replyto" を返信先として自動認識します -->
             <input type="email" name="email" placeholder="メールアドレス" required>
-            <input type="text" name="subject" placeholder="ご依頼内容" required>
-            <input type="text" name="date" placeholder="希望日時">
-            <input type="text" name="budget" placeholder="ご予算">
-            <textarea name="message" rows="6" placeholder="メッセージ" required></textarea>
+            
+            <select name="inquiry_type" required style="cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill=%22white%22 height=%2224%22 viewBox=%220 0 24 24%22 width=%2224%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/><path d=%22M0 0h24v24H0z%22 fill=%22none%22/></svg>'); background-repeat: no-repeat; background-position: right 16px top 50%;">
+                <option value="" disabled selected>お問い合わせ種別を選択してください</option>
+                <option value="演奏依頼">演奏依頼</option>
+                <option value="録音依頼">録音依頼</option>
+                <option value="作編曲 / 譜面制作">作編曲 / 譜面制作</option>
+                <option value="レッスン">レッスン</option>
+                <option value="その他">その他</option>
+            </select>
+            
+            <input type="text" name="subject" placeholder="件名・プロジェクト名など">
+            <input type="text" name="date" placeholder="希望日時・納期 (未定でも可)">
+            <input type="text" name="budget" placeholder="ご予算の目安">
+            <textarea name="message" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
             <button type="submit" class="btn btn-primary">送信する</button>
         </form>
 
