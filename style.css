@@ -285,18 +285,32 @@ img {
 }
 
 .why-card {
-  padding: 40px 32px;
-  text-align: center;
+  padding: 28px 24px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .why-card {
+    padding: 40px 32px;
+    text-align: center;
+  }
 }
 
 .why-number {
   font-family: var(--font-en);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--accent-gold);
   opacity: 0.3;
   line-height: 1;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .why-number {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+  }
 }
 
 .why-title {
