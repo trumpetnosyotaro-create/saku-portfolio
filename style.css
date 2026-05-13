@@ -134,26 +134,103 @@ img {
 .logo-en { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; }
 .logo-ja { font-size: 0.7rem; color: var(--text-muted); }
 
-.nav-menu {
-  display: none;
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 0;
 }
 
-@media (min-width: 768px) {
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-main);
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s;
+  border-radius: 2px;
+}
+
+/* Hamburger Active State */
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background-color: var(--accent-gold);
+}
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background-color: var(--accent-gold);
+}
+
+/* Mobile Nav Menu */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(3, 10, 22, 0.98); /* Deep navy base, high opacity */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.nav-menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-menu a {
+  font-size: 1.25rem;
+  font-family: var(--font-en);
+  color: var(--text-main);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: var(--accent-gold);
+}
+
+.nav-contact-btn {
+  color: var(--accent-gold) !important;
+}
+
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
   .nav-menu {
-    display: flex;
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+    flex-direction: row;
     gap: 24px;
-    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: none;
   }
   .nav-menu a {
     font-size: 0.9rem;
-    font-family: var(--font-en);
-  }
-  .nav-menu a:hover {
-    color: var(--accent-gold);
   }
   .nav-contact-btn {
     border: 1px solid var(--accent-gold);
-    color: var(--accent-gold) !important;
     padding: 6px 16px;
     border-radius: 4px;
   }
